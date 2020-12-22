@@ -5,7 +5,7 @@ export function getItems() {
     return async dispatch => {
 
         const data = await axios.get(`https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty`)
-        const stories = data.data.slice(0, 5)
+        const stories = data.data.slice(0, 100)
         const items = []
 
         const result = stories.map((el) => {
@@ -17,7 +17,9 @@ export function getItems() {
         await Promise.all(result)
             .then(id => {
                 id.forEach(element => {
-                    items.push(element.data)
+                    if(element !== null){
+                        items.push(element.data)
+                    }
                 })
             })
 
@@ -33,9 +35,10 @@ export function setItems(items) {
     }
 }
 
-export function changeLoading(event) {
+export function changeLoading(type) {
     return {
         type: CHANGE_LOADING,
-        payload: event
+        payload: type
     }
 }
+

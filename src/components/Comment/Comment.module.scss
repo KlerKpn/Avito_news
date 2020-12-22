@@ -1,0 +1,41 @@
+.Comment{
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0;
+    display: flex;
+    background: #3a3939;
+    flex-direction: column;
+    user-select: none;
+    word-wrap: break-word;
+
+  
+        .by{
+           
+            border: .5px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .text{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .date{
+            color: #ccc;
+        }
+        .Comment_by{
+            
+            border-radius: 5px;
+            margin: 10px 0;
+            margin-left: 3%;
+            display: flex;
+            background: #3a3939;
+            flex-direction: row;
+            user-select: none;
+            word-wrap: break-word;
+            .line{
+                border: .5px solid #ccc;
+                margin-right: 10px;  
+            }
+        }
+}

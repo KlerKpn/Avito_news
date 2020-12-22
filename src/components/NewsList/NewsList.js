@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Item from '../Item/Item'
 import { getItems } from './../../store/actions/items';
+import Loader from './../Loader/Loader';
 
 
 class NewsList extends React.Component {
@@ -12,12 +13,11 @@ class NewsList extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div >
                 {
                     this.props.loading
-                        ? <span>loading</span>
+                        ? <Loader />
                         : this.props.items.map(el => {
-                            console.log(el)
                             return (
                                 <Item key={el.id}
                                     by={el.by}
