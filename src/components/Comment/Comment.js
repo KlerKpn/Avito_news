@@ -50,7 +50,6 @@ class Comment extends React.Component {
             currentClass = classes.Comment
             line = ''
         }
-        console.log(typeof this.state.data)
         return (
             <>
 
