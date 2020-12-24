@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export function getItems() {
     return async dispatch => {
-
+        dispatch(changeLoading(true))
         const data = await axios.get(`https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty`)
         const stories = data.data.slice(0, 100)
         const items = []
